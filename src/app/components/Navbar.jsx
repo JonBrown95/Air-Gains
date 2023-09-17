@@ -1,27 +1,31 @@
-import Link from 'next/link';
+import Link from "next/link";
 import { useAuthContext } from "@/context/AuthContext";
 
 export const Navbar = () => {
   const { user } = useAuthContext();
 
   return (
-    <>
-      <nav className='flex items-center justify-between bg-gray-900 p-3 '>
-        <Link legacyBehavior href='/homepage'>
-          <a className='inline-flex items-center p-2 mr-4 '>
-            <span className='text-xl text-white font-bold uppercase tracking-wide'>
-              Air Gains
-            </span>
+    <nav className="bg-gray-900 border-b-2 border-white">
+      <div className="container mx-auto flex items-center justify-between py-3">
+        <Link legacyBehavior href="/homepage">
+          <a className="text-xl text-[#fef250] font-bold uppercase tracking-wide">
+            Air Gains
           </a>
         </Link>
-        <div className="hidden md:flex space-x-4 ">
-          
-        <h1 className="text-white text-2xl font-semibold">Recipes</h1>
-        <h1 className="text-white text-2xl font-semibold">Submit</h1>
-          <h1 className="text-white text-2xl font-semibold">{user.email}</h1>
-          
+        <div className="hidden md:flex space-x-3 items-center">
+          <Link legacyBehavior href="/recipes">
+            <a className="text-white text-1xl font-semibold hover:text-[#fef250] transition-colors">
+              Recipes
+            </a>
+          </Link>
+          <Link legacyBehavior href="/submit">
+            <a className="text-white text-1xl font-semibold hover:text-[#fef250] transition-colors">
+              Submit
+            </a>
+          </Link>
+          <h1 className="text-white text-1xl font-semibold">{user.email}</h1>
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 };
