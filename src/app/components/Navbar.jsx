@@ -7,7 +7,7 @@ export const Navbar = () => {
   return (
     <>
       <nav className='flex items-center justify-between bg-gray-900 p-3 '>
-        <Link legacyBehavior href='/'>
+        <Link legacyBehavior href='/homepage'>
           <a className='inline-flex items-center p-2 mr-4 '>
             <span className='text-xl text-white font-bold uppercase tracking-wide'>
               Air Gains
